@@ -1,0 +1,5 @@
+train: C:\Users\86182\Desktop\ultralytics-main (3)\dataset_org\train\images  #Please change your own path.
+val: C:\Users\86182\Desktop\ultralytics-main (3)\dataset_org\valid\images   #Please change your own path.
+test: C:\Users\86182\Desktop\ultralytics-main (3)\dataset_org\test\images  #Please change your own path.
+nc: 3
+name: ["dark","bright","shell"]
