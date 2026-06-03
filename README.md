@@ -25,7 +25,7 @@ pip install -r requirements.txt
 
 Our experiments use a proprietary dataset of shale thin‑section images from the Lower Silurian Longmaxi Formation (Sichuan Basin), containing 1,412 images with YOLO‑format labels for three laminae types (dark, bright, shell).
 
-**Due to repository size limitations and institutional data policies, only 100 example image‑label pairs are included in this repository** for code testing and format reference`dataset_org`.
+**Due to repository size limitations（file size should not exceed 100MB）, only 100 example image‑label pairs are included in this repository** for code testing and format reference`dataset_org`.
 
 - Each `.txt` label follows YOLO format: `class id x_center y_center width height`
 - The dataset is split into **train/valid/test** sets with a radio of **8:1:1** using `data_split.py`
