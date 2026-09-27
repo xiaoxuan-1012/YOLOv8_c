@@ -75,7 +75,7 @@ Annotation notes:
 - Partitioning into **train / val / test = 8:1:1** is performed at the level of thin-section images (not annotation instances) using `data_split.py`, so that no image contributes to more than one subset.
 - Class names are defined in `data.yaml`.
 
-**Availability.** Owing to the 100 MB file-size limit of this repository, **100 example image–label pairs** are provided in `dataset_org/` as a format reference and for testing the code. The complete dataset is available from the corresponding author upon reasonable request.
+**Availability.** Owing to the 100 MB file-size limit of this repository, **120 example image–label pairs** are provided in `dataset_org/` as a format reference and for testing the code. The complete dataset is available from the corresponding author upon reasonable request.
 
 ## Training
 
@@ -106,7 +106,7 @@ Augmentation is applied **after partitioning and to the training subset only**, 
 ### Model configuration files
 
 - **YOLOv8n (baseline)**: `ultralytics/models/v8/yolov8n.yaml`
-- **YOLOv8_c (ours)**: `ultralytics/models/v8/yolov8n_c.yaml`
+- **YOLOv8_c (ours)**: `ultralytics/models/v8/yolov8_c.yaml`
 
 ### Commands
 
@@ -115,13 +115,13 @@ Augmentation is applied **after partitioning and to the training subset only**, 
 python train.py --model ultralytics/models/v8/yolov8n.yaml
 
 # YOLOv8_c
-python train.py --model ultralytics/models/v8/yolov8n_c.yaml
+python train.py --model ultralytics/models/v8/yolov8_c.yaml
 ```
 
 To check that the environment works, run a short training on the bundled example data:
 
 ```bash
-python train.py --model ultralytics/models/v8/yolov8n_c.yaml --data data.yaml --epochs 5 --batch 2
+python train.py --model ultralytics/models/v8/yolov8_c.yaml --data data.yaml --epochs 5 --batch 2
 ```
 
 This produces a weight file under `runs/train/`.
@@ -140,6 +140,8 @@ The ablation studies reported in the paper are reproduced by training with the c
 
 | Model | Weight file |
 |---|---|
+|Mask R-CNN | `runs/train/Mask R-CNN/weights/best.pt` |
+| YOLOv5n  | `runs/train/yolov5n/weights/best.pt` |
 | YOLOv8n (baseline) | `runs/train/yolov8n/weights/best.pt` |
 | YOLOv8_c (ours) | `runs/train/yolov8_c/weights/best.pt` |
 

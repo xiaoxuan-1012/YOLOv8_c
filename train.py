@@ -15,7 +15,7 @@ if __name__ == "__main__":
                 workers=0,
                 device=device,
                 augment=True,
-                hsv_h=0.01,
+                hsv_h=0.01, 
                 hsv_s=0.01,
                 hsv_v=0.01,
                 degrees=5,

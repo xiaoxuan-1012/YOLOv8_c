@@ -310,7 +310,7 @@ class yolo_heatmap:
         model.task = task
         if not hasattr(model, 'end2end'):
             model.end2end = False
-        if model.end2end:
+        if model.end2end: 
             model.end2end = False
         
         if task == 'detect':
