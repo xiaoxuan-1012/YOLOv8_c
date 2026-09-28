@@ -100,7 +100,7 @@ Augmentation is applied **after partitioning and to the training subset only**, 
 | Operation | Setting | Rationale |
 |---|---|---|
 | Rotation | ±5° | Accommodates slight tilt of laminae relative to the image frame without altering their bedding-parallel orientation |
-| Hue / saturation | h = 0.01, s = 0.01, v = 0.01 | Simulates variation in illumination and image acquisition while preserving the relative brightness relationships that define the three classes |
+| Hue / saturation | h = 0.01, s = 0.01 | Simulates variation in illumination and image acquisition while preserving the relative brightness relationships that define the three classes |
 | Vertical flip | **not used** | Reverses the stratigraphic younging direction |
 
 ### Model configuration files
@@ -130,20 +130,26 @@ This produces a weight file under `runs/train/`.
 
 The ablation studies reported in the paper are reproduced by training with the corresponding configuration file; all other settings remain unchanged.
 
+
+```bash
+python train.py --model ultralytics/models/ablation_module/yolov8n_cbam.yaml
+
+```
 | Experiment | Configuration |
 |---|---|
-| Individual modules | `yolov8n_cbam.yaml`, `yolov8n_c2ff.yaml`, `yolov8n_eiou.yaml` |
+| Individual modules | `ultralytics/models/ablation_module/yolov8n_cbam.yaml`, `yolov8n_c2ff.yaml`, `yolov8n_eiou.yaml` |
 | Augmentation | `yolov8n_c.yaml` with the relevant augmentation parameters disabled |
 | CBAM placement (A1–A6) | `yolov8n_cbam_a1.yaml` … `yolov8n_cbam_a6.yaml` |
 
 ## Trained Weights
 
-| Model | Weight file |
+All model configuration files are located under `ultralytics/models/`.
+
+| Experiment | Configuration file |
 |---|---|
-|Mask R-CNN | `runs/train/Mask R-CNN/weights/best.pt` |
-| YOLOv5n  | `runs/train/yolov5n/weights/best.pt` |
-| YOLOv8n (baseline) | `runs/train/yolov8n/weights/best.pt` |
-| YOLOv8_c (ours) | `runs/train/yolov8_c/weights/best.pt` |
+| Individual modules | `ablation_module/yolov8n_cbam.yaml`,`ablation_module/yolov8n_c2ff.yaml`,`ablation_module/yolov8n_eiou.yaml` |
+| Augmentation | `v8/yolov8_c.yaml`, with the relevant augmentation parameters disabled |
+| CBAM placement (A1–A6) | `ablation_cbam/yolov8n_cbam_a1.yaml` … `ablation_cbam/yolov8n_cbam_a6.yaml` |
 
 Inference:
 
