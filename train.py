@@ -17,9 +17,8 @@ if __name__ == "__main__":
                 augment=True,
                 hsv_h=0.01, 
                 hsv_s=0.01,
-                hsv_v=0.01,
                 degrees=5,
                 flipud=0.0,
-                fliplr=0.5
+                fliplr=0.0
                 )
 
